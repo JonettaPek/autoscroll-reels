@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Reel Autoscroll",
+    "version": "0.1.0",
+    "description": "Force reels to automatically scroll to the next reel",
+    "permissions": ["storage", "tab"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "action": {
+      "default_title": "YT Reel Autoscroller",
+      "default_popup": "popup.html"
+    }
+  }
